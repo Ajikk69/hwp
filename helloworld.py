@@ -130,17 +130,20 @@ def menuHelp():
 		key = ''
 	menuHelp =	"╔══[ Help Message ]" + "\n" + \
 				"╠ " + key + "Help" + "\n" + \
-				"╠ " + key + "Translate" + "\n" + \
-				"╠ " + key + "TextToSpeech" + "\n" + \
-				"╠══[ Status Command ]" + "\n" + \
+				"╠ " + key + "Help Owner" + "\n" + \
+				"╠ " + key + "Help pubic" + "\n" + \
+				"╚══[ Copyright © J1KK ]"
+	return menuHelp
+
+def menuTextToSpeech():
+	if settings['setKey'] == True:
+		key = settings['keyCommand']
+	else:
+		key = ''
+	menuTextToSpeech = "╠══[ Owner Command ]" + "\n" + \
 				"╠ MyKey" + "\n" + \
-				"╠ " + key + "Logout" + "\n" + \
-				"╠ " + key + "Restart" + "\n" + \
-				"╠ " + key + "Runtime" + "\n" + \
-				"╠ " + key + "Speed" + "\n" + \
+				"╠ " + key + "OFAG" + "\n" + \
 				"╠ " + key + "Status" + "\n" + \
-				"╠══[ Settings Command ]" + "\n" + \
-				"╠ SetKey 「On/Off」" + "\n" + \
 				"╠ " + key + "AutoAdd 「On/Off」" + "\n" + \
 				"╠ " + key + "AutoJoin 「On/Off」" + "\n" + \
 				"╠ " + key + "AutoJoinTicket 「On/Off」" + "\n" + \
@@ -154,10 +157,25 @@ def menuHelp():
 				"╠ " + key + "SetAutoAddMessage: 「text」" + "\n" + \
 				"╠ " + key + "SetAutoResponMessage: 「text」" + "\n" + \
 				"╠ " + key + "SetAutoJoinMessage: 「Text」" + "\n" + \
-				"╠══[ Self Command ]" + "\n" + \
 				"╠ " + key + "ChangeName: 「Text」" + "\n" + \
 				"╠ " + key + "ChangeBio: 「Text」" + "\n" + \
-				"╠ " + key + "Me" + "\n" + \
+				"╠ " + key + "FriendBroadcast" + "\n" + \
+				"╠ " + key + "ChangePictureProfile" + "\n" + \
+				"╠ " + key + "ChangeGroupName: 「Text」" + "\n" + \
+				"╠ " + key + "GroupBroadcast: 「Text」" + "\n" + \
+				"╠ " + key + "OpenQR" + "\n" + \
+				"╠ " + key + "CloseQR" + "\n" + \
+				"╠ " + key + "GroupList" + "\n" + \
+				"╚══[ Copyright © J1KK ]"
+	return menuTextToSpeech
+
+def menuTranslate():
+	if settings['setKey'] == True:
+		key = settings['keyCommand']
+	else:
+		key = ''
+	menuTranslate =	"╠══[ Public Command ]" + "\n" + \
+	                        "╠ " + key + "Me" + "\n" + \
 				"╠ " + key + "MyMid" + "\n" + \
 				"╠ " + key + "MyName" + "\n" + \
 				"╠ " + key + "MyBio" + "\n" + \
@@ -172,36 +190,16 @@ def menuHelp():
 				"╠ " + key + "GetVideoProfile @Mention" + "\n" + \
 				"╠ " + key + "GetCover @Mention" + "\n" + \
 				"╠ " + key + "CloneProfile @Mention" + "\n" + \
-				"╠ " + key + "RestoreProfile" + "\n" + \
-				"╠ " + key + "BackupProfile" + "\n" + \
-				"╠ " + key + "FriendList" + "\n" + \
-				"╠ " + key + "FriendInfo 「Number」" + "\n" + \
-				"╠ " + key + "BlockList" + "\n" + \
-				"╠ " + key + "FriendBroadcast" + "\n" + \
-				"╠ " + key + "ChangePictureProfile" + "\n" + \
-				"╠══[ Group Command ]" + "\n" + \
-				"╠ " + key + "ChangeGroupName: 「Text」" + "\n" + \
 				"╠ " + key + "GroupCreator" + "\n" + \
 				"╠ " + key + "GroupID" + "\n" + \
 				"╠ " + key + "GroupName" + "\n" + \
 				"╠ " + key + "GroupPicture" + "\n" + \
-				"╠ " + key + "OpenQR" + "\n" + \
-				"╠ " + key + "CloseQR" + "\n" + \
-				"╠ " + key + "GroupList" + "\n" + \
 				"╠ " + key + "MemberList" + "\n" + \
 				"╠ " + key + "PendingList" + "\n" + \
 				"╠ " + key + "GroupInfo" + "\n" + \
-				"╠ " + key + "GroupBroadcast: 「Text」" + "\n" + \
-				"╠ " + key + "ChangeGroupPicture" + "\n" + \
-				"╠══[ Special Command ]" + "\n" + \
-				"╠ " + key + "Mimic 「On/Off」" + "\n" + \
-				"╠ " + key + "MimicList" + "\n" + \
-				"╠ " + key + "MimicAdd @Mention" + "\n" + \
-				"╠ " + key + "MimicDel @Mention" + "\n" + \
 				"╠ " + key + "Mention" + "\n" + \
 				"╠ " + key + "Lurking 「On/Off」" + "\n" + \
 				"╠ " + key + "Lurking" + "\n" + \
-				"╠══[ Media Command ]" + "\n" + \
 				"╠ " + key + "InstaInfo 「Username」" + "\n" + \
 				"╠ " + key + "InstaStory 「Username」" + "\n" + \
 				"╠ " + key + "Image Coursel" + "\n" + \
@@ -210,186 +208,7 @@ def menuHelp():
 				"╠ " + key + "SearchMusic 「Search」" + "\n" + \
 				"╠ " + key + "SearchLyric 「Search」" + "\n" + \
 				"╠ " + key + "SearchYoutube 「Search」" + "\n" + \
-				"╚══[ Copyright @Zero-Cool404 ]"
-	return menuHelp
-
-def menuTextToSpeech():
-	if settings['setKey'] == True:
-		key = settings['keyCommand']
-	else:
-		key = ''
-	menuTextToSpeech =	"╔══[ Text To Speech ]" + "\n" + \
-						"╠ " + key + "af : Afrikaans" + "\n" + \
-						"╠ " + key + "sq : Albanian" + "\n" + \
-						"╠ " + key + "ar : Arabic" + "\n" + \
-						"╠ " + key + "hy : Armenian" + "\n" + \
-						"╠ " + key + "bn : Bengali" + "\n" + \
-						"╠ " + key + "ca : Catalan" + "\n" + \
-						"╠ " + key + "zh : Chinese" + "\n" + \
-						"╠ " + key + "zh-cn : Chinese (Mandarin/China)" + "\n" + \
-						"╠ " + key + "zh-tw : Chinese (Mandarin/Taiwan)" + "\n" + \
-						"╠ " + key + "zh-yue : Chinese (Cantonese)" + "\n" + \
-						"╠ " + key + "hr : Croatian" + "\n" + \
-						"╠ " + key + "cs : Czech" + "\n" + \
-						"╠ " + key + "da : Danish" + "\n" + \
-						"╠ " + key + "nl : Dutch" + "\n" + \
-						"╠ " + key + "en : English" + "\n" + \
-						"╠ " + key + "en-au : English (Australia)" + "\n" + \
-						"╠ " + key + "en-uk : English (United Kingdom)" + "\n" + \
-						"╠ " + key + "en-us : English (United States)" + "\n" + \
-						"╠ " + key + "eo : Esperanto" + "\n" + \
-						"╠ " + key + "fi : Finnish" + "\n" + \
-						"╠ " + key + "fr : French" + "\n" + \
-						"╠ " + key + "de : German" + "\n" + \
-						"╠ " + key + "el : Greek" + "\n" + \
-						"╠ " + key + "hi : Hindi" + "\n" + \
-						"╠ " + key + "hu : Hungarian" + "\n" + \
-						"╠ " + key + "is : Icelandic" + "\n" + \
-						"╠ " + key + "id : Indonesian" + "\n" + \
-						"╠ " + key + "it : Italian" + "\n" + \
-						"╠ " + key + "ja : Japanese" + "\n" + \
-						"╠ " + key + "km : Khmer (Cambodian)" + "\n" + \
-						"╠ " + key + "ko : Korean" + "\n" + \
-						"╠ " + key + "la : Latin" + "\n" + \
-						"╠ " + key + "lv : Latvian" + "\n" + \
-						"╠ " + key + "mk : Macedonian" + "\n" + \
-						"╠ " + key + "no : Norwegian" + "\n" + \
-						"╠ " + key + "pl : Polish" + "\n" + \
-						"╠ " + key + "pt : Portuguese" + "\n" + \
-						"╠ " + key + "ro : Romanian" + "\n" + \
-						"╠ " + key + "ru : Russian" + "\n" + \
-						"╠ " + key + "sr : Serbian" + "\n" + \
-						"╠ " + key + "si : Sinhala" + "\n" + \
-						"╠ " + key + "sk : Slovak" + "\n" + \
-						"╠ " + key + "es : Spanish" + "\n" + \
-						"╠ " + key + "es-es : Spanish (Spain)" + "\n" + \
-						"╠ " + key + "es-us : Spanish (United States)" + "\n" + \
-						"╠ " + key + "sw : Swahili" + "\n" + \
-						"╠ " + key + "sv : Swedish" + "\n" + \
-						"╠ " + key + "ta : Tamil" + "\n" + \
-						"╠ " + key + "th : Thai" + "\n" + \
-						"╠ " + key + "tr : Turkish" + "\n" + \
-						"╠ " + key + "uk : Ukrainian" + "\n" + \
-						"╠ " + key + "vi : Vietnamese" + "\n" + \
-						"╠ " + key + "cy : Welsh" + "\n" + \
-						"╚══[ Jangan Typo ]" + "\n" + "\n\n" + \
-						"Contoh : " + key + "say-id chiken"
-	return menuTextToSpeech
-
-def menuTranslate():
-	if settings['setKey'] == True:
-		key = settings['keyCommand']
-	else:
-		key = ''
-	menuTranslate =	"╔══[ Translate ]" + "\n" + \
-					"╠ " + key + "af : afrikaans" + "\n" + \
-					"╠ " + key + "sq : albanian" + "\n" + \
-					"╠ " + key + "am : amharic" + "\n" + \
-					"╠ " + key + "ar : arabic" + "\n" + \
-					"╠ " + key + "hy : armenian" + "\n" + \
-					"╠ " + key + "az : azerbaijani" + "\n" + \
-					"╠ " + key + "eu : basque" + "\n" + \
-					"╠ " + key + "be : belarusian" + "\n" + \
-					"╠ " + key + "bn : bengali" + "\n" + \
-					"╠ " + key + "bs : bosnian" + "\n" + \
-					"╠ " + key + "bg : bulgarian" + "\n" + \
-					"╠ " + key + "ca : catalan" + "\n" + \
-					"╠ " + key + "ceb : cebuano" + "\n" + \
-					"╠ " + key + "ny : chichewa" + "\n" + \
-					"╠ " + key + "zh-cn : chinese (simplified)" + "\n" + \
-					"╠ " + key + "zh-tw : chinese (traditional)" + "\n" + \
-					"╠ " + key + "co : corsican" + "\n" + \
-					"╠ " + key + "hr : croatian" + "\n" + \
-					"╠ " + key + "cs : czech" + "\n" + \
-					"╠ " + key + "da : danish" + "\n" + \
-					"╠ " + key + "nl : dutch" + "\n" + \
-					"╠ " + key + "en : english" + "\n" + \
-					"╠ " + key + "eo : esperanto" + "\n" + \
-					"╠ " + key + "et : estonian" + "\n" + \
-					"╠ " + key + "tl : filipino" + "\n" + \
-					"╠ " + key + "fi : finnish" + "\n" + \
-					"╠ " + key + "fr : french" + "\n" + \
-					"╠ " + key + "fy : frisian" + "\n" + \
-					"╠ " + key + "gl : galician" + "\n" + \
-					"╠ " + key + "ka : georgian" + "\n" + \
-					"╠ " + key + "de : german" + "\n" + \
-					"╠ " + key + "el : greek" + "\n" + \
-					"╠ " + key + "gu : gujarati" + "\n" + \
-					"╠ " + key + "ht : haitian creole" + "\n" + \
-					"╠ " + key + "ha : hausa" + "\n" + \
-					"╠ " + key + "haw : hawaiian" + "\n" + \
-					"╠ " + key + "iw : hebrew" + "\n" + \
-					"╠ " + key + "hi : hindi" + "\n" + \
-					"╠ " + key + "hmn : hmong" + "\n" + \
-					"╠ " + key + "hu : hungarian" + "\n" + \
-					"╠ " + key + "is : icelandic" + "\n" + \
-					"╠ " + key + "ig : igbo" + "\n" + \
-					"╠ " + key + "id : indonesian" + "\n" + \
-					"╠ " + key + "ga : irish" + "\n" + \
-					"╠ " + key + "it : italian" + "\n" + \
-					"╠ " + key + "ja : japanese" + "\n" + \
-					"╠ " + key + "jw : javanese" + "\n" + \
-					"╠ " + key + "kn : kannada" + "\n" + \
-					"╠ " + key + "kk : kazakh" + "\n" + \
-					"╠ " + key + "km : khmer" + "\n" + \
-					"╠ " + key + "ko : korean" + "\n" + \
-					"╠ " + key + "ku : kurdish (kurmanji)" + "\n" + \
-					"╠ " + key + "ky : kyrgyz" + "\n" + \
-					"╠ " + key + "lo : lao" + "\n" + \
-					"╠ " + key + "la : latin" + "\n" + \
-					"╠ " + key + "lv : latvian" + "\n" + \
-					"╠ " + key + "lt : lithuanian" + "\n" + \
-					"╠ " + key + "lb : luxembourgish" + "\n" + \
-					"╠ " + key + "mk : macedonian" + "\n" + \
-					"╠ " + key + "mg : malagasy" + "\n" + \
-					"╠ " + key + "ms : malay" + "\n" + \
-					"╠ " + key + "ml : malayalam" + "\n" + \
-					"╠ " + key + "mt : maltese" + "\n" + \
-					"╠ " + key + "mi : maori" + "\n" + \
-					"╠ " + key + "mr : marathi" + "\n" + \
-					"╠ " + key + "mn : mongolian" + "\n" + \
-					"╠ " + key + "my : myanmar (burmese)" + "\n" + \
-					"╠ " + key + "ne : nepali" + "\n" + \
-					"╠ " + key + "no : norwegian" + "\n" + \
-					"╠ " + key + "ps : pashto" + "\n" + \
-					"╠ " + key + "fa : persian" + "\n" + \
-					"╠ " + key + "pl : polish" + "\n" + \
-					"╠ " + key + "pt : portuguese" + "\n" + \
-					"╠ " + key + "pa : punjabi" + "\n" + \
-					"╠ " + key + "ro : romanian" + "\n" + \
-					"╠ " + key + "ru : russian" + "\n" + \
-					"╠ " + key + "sm : samoan" + "\n" + \
-					"╠ " + key + "gd : scots gaelic" + "\n" + \
-					"╠ " + key + "sr : serbian" + "\n" + \
-					"╠ " + key + "st : sesotho" + "\n" + \
-					"╠ " + key + "sn : shona" + "\n" + \
-					"╠ " + key + "sd : sindhi" + "\n" + \
-					"╠ " + key + "si : sinhala" + "\n" + \
-					"╠ " + key + "sk : slovak" + "\n" + \
-					"╠ " + key + "sl : slovenian" + "\n" + \
-					"╠ " + key + "so : somali" + "\n" + \
-					"╠ " + key + "es : spanish" + "\n" + \
-					"╠ " + key + "su : sundanese" + "\n" + \
-					"╠ " + key + "sw : swahili" + "\n" + \
-					"╠ " + key + "sv : swedish" + "\n" + \
-					"╠ " + key + "tg : tajik" + "\n" + \
-					"╠ " + key + "ta : tamil" + "\n" + \
-					"╠ " + key + "te : telugu" + "\n" + \
-					"╠ " + key + "th : thai" + "\n" + \
-					"╠ " + key + "tr : turkish" + "\n" + \
-					"╠ " + key + "uk : ukrainian" + "\n" + \
-					"╠ " + key + "ur : urdu" + "\n" + \
-					"╠ " + key + "uz : uzbek" + "\n" + \
-					"╠ " + key + "vi : vietnamese" + "\n" + \
-					"╠ " + key + "cy : welsh" + "\n" + \
-					"╠ " + key + "xh : xhosa" + "\n" + \
-					"╠ " + key + "yi : yiddish" + "\n" + \
-					"╠ " + key + "yo : yoruba" + "\n" + \
-					"╠ " + key + "zu : zulu" + "\n" + \
-					"╠ " + key + "fil : Filipino" + "\n" + \
-					"╠ " + key + "he : Hebrew" + "\n" + \
-					"╚══[ Jangan Typo ]" + "\n" + "\n\n" + \
-					"Contoh : " + key + "tr-id chiken"
+				"╚══[ Copyright © J1KK ]"
 	return menuTranslate
 
 def clientBot(op):
@@ -440,11 +259,16 @@ def clientBot(op):
 						elif cmd == "restart":
 							client.sendMessage(to, "Berhasil mereset bot")
 							restartBot()
-						elif cmd == "speed":
-							start = time.time()
-							client.sendMessage(to, "Menghitung kecepatan...")
-							elapsed_time = time.time() - start
-							client.sendMessage(to, "Kecepatan mengirim pesan {} detik".format(str(elapsed_time)))
+						elif cmd == "ofag":
+							if msg._from in owner:
+								gid = client.getGroupIdsJoined()
+								for i in gid:
+								client.leaveGroup(i)
+                                                              if wait["lang"] == "JP":
+								k1.sendMessage(msg.to,"Semua Bot Sudah Keluar")
+                                                              else:
+                                                                client.sendMessage(msg.to,"He declined all invitations")
+    
 						elif cmd == "runtime":
 							timeNow = time.time()
 							runtime = timeNow - clientStart
@@ -461,10 +285,10 @@ def clientBot(op):
 						elif cmd == "help":
 							helpMessage = menuHelp()
 							client.sendMessage(to, helpMessage)
-						elif cmd == "texttospeech":
+						elif cmd == "help owner":
 							helpTextToSpeech = menuTextToSpeech()
 							client.sendMessage(to, helpTextToSpeech)
-						elif cmd == "translate":
+						elif cmd == "help public":
 							helpTranslate = menuTranslate()
 							client.sendMessage(to, helpTranslate)
 
